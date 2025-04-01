@@ -70,7 +70,7 @@ class DataValidation:
         try:
             train_file_path = self.data_ingestion_artifact.trained_file_path
             test_file_path = self.data_ingestion_artifact.test_file_path
-            
+
             # read data
             train_df = DataValidation.read_data(train_file_path)
             test_df = DataValidation.read_data(test_file_path)
@@ -99,6 +99,7 @@ class DataValidation:
                 invalid_train_file_path= None,
                 invalid_test_file_path= None,
                 drift_report_file_path=self.data_validation_config.drift_report_file_path
+
 
             )
             return data_validation_artifact
