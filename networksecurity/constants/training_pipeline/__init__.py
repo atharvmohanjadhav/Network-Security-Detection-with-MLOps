@@ -32,7 +32,7 @@ DATA_INGESTION_INGESTED_DIR :str = "ingested"
 DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO : float = 0.2
 
 """
-Data Ingestion related constants start with DATA_INGESTION VAR NAME 
+Data Validation related constants start with DATA_Validation VAR NAME 
 
 """
 DATA_VALIDATION_DIR_NAME:str = "data_validation"
@@ -42,7 +42,7 @@ DATA_VALIDATION_DRIFT_REPORT_DIR: str = "drift_report"
 DATA_VALIDATION_DRIFT_REPORT_FILE_NAME: str = "report.yaml"
 
 """
-Data Validation related constants start with DATA_Validation VAR NAME 
+Data Transormation related constants start with DATA_TRASFORMATION VAR NAME 
 
 """
 DATA_TRANSFORMATION_DIR_NAME: str = 'data_transformation'

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/MLOps%20Udemy%20Krish%20Naik/Network%20Security/mlruns/0/724ba767dca34c4f8949eaf5cb1a2c65/artifacts
+end_time: 1743668859695
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 724ba767dca34c4f8949eaf5cb1a2c65
+run_name: intelligent-wasp-922
+run_uuid: 724ba767dca34c4f8949eaf5cb1a2c65
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743668855394
+status: 3
+tags: []
+user_id: athar
