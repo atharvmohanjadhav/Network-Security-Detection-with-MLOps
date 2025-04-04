@@ -57,6 +57,36 @@ jobs:
              docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
              docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
              echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+    
+    Continous-Deployment:
+        needs: build-and-push-ecr-image
+        runs-on: self-hosted    
+        steps:  
+          - name: Checkout
+            uses: actions/checkout@v3
+
+          - name: Configure AWS Credentials
+            uses: aws-actions/configure-aws-credentials@v1
+            with: 
+              aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+              aws-secret-access-key: ${{ secrets.AWS_SECRETE_ACCESS_KEY }}
+              aws-region: ${{ secrets.AWS_REGION }}
+
+          - name: Login to Amazon ECR
+            id: login-ecr
+            uses: aws-actions/amazon-ecr-login@v1
+
+          - name: Pull Docker Images
+            run: |
+             docker pull ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.AWS_ACCESS_KEY_ID }}:latest
+
+          - name: Run Docker Images to serve users
+            run: |
+             docker run -d -p 8080:8080 --ipc="host" --name=ajnetworksecurity -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}'
+          - name: Clean previous imges and containers
+            run: |
+             docker system prune -f
+
 
 
 
