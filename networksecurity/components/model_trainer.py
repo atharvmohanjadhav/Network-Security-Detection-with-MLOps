@@ -15,6 +15,11 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import (AdaBoostClassifier,GradientBoostingClassifier,RandomForestClassifier)
 import mlflow
 
+import dagshub
+dagshub.init(repo_owner='atharvmohanjadhav', repo_name='Network-Security', mlflow=True)
+
+
+
 class ModelTrainer:
     def __init__(self,model_trainer_config:ModelTrainerConfig,data_transformation_artifact = DataTransformationArtifact):
         try:
@@ -91,7 +96,9 @@ class ModelTrainer:
         # this is for transformation and prediction
         network_model = NetworkModel(preprocessor=preproessor,model= best_model)
         save_object(file_path=self.model_trainer_config.trained_model_file_path,obj=network_model)
-
+        
+        #saving the best model 
+        save_object("final_models/model.pkl",best_model)
         # model trainer artifact
         model_training_artifact = ModelTrainerArtifact(trained_model_file_path=self.model_trainer_config.trained_model_file_path,
                              train_metric_artifact=classification_train_metric,
