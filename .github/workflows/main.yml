@@ -83,6 +83,7 @@ jobs:
           - name: Run Docker Images to serve users
             run: |
              docker run -d -p 8080:8080 --ipc="host" --name=ajnetworksecurity -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}'
+             
           - name: Clean previous imges and containers
             run: |
              docker system prune -f
