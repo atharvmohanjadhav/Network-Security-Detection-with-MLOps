@@ -78,7 +78,7 @@ jobs:
 
           - name: Pull Docker Images
             run: |
-             docker pull ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.AWS_ACCESS_KEY_ID }}:latest
+             docker pull ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
 
           - name: Run Docker Images to serve users
             run: |
