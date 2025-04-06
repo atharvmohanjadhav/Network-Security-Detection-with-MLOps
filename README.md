@@ -57,11 +57,13 @@ The project follows a modular and scalable MLOps architecture with the following
 
 ## 🚀 How to Run the Project
 
+
 1. **Clone the repository**  
    ```bash
    git clone https://github.com/your-username/network-security-detection-with-mlops.git
    cd network-security-detection-with-mlops
    ```
+
 
 2. **Install dependencies**  
    Make sure you have Python 3.8+ and pip installed.
@@ -69,10 +71,12 @@ The project follows a modular and scalable MLOps architecture with the following
    pip install -r requirements.txt
    ```
 
+
 3. **Run the project**
    ```bash
    python app.py
    ```
+
 
 4. **Access the API**
    The FastAPI app will start locally at:  
@@ -81,6 +85,7 @@ The project follows a modular and scalable MLOps architecture with the following
 ---
 
 ## 📦 Deployment Instructions
+
 
 - Dockerize the application:
   ```bash
