@@ -2,3 +2,5 @@ venv
 .env
 notes.txt
 finalnetworksecurity.pdf
+logs/
+__pycache__/

@@ -3,12 +3,28 @@ from pymongo.mongo_client import MongoClient
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
-MONGO_DB_URL = os.getenv("MONGO_DB_URL")
+# MONGO_DB_URL = os.getenv("MONGO_DB_URL")
+
+# # Create a new client and connect to the server
+# client = MongoClient(MONGO_DB_URL)
+
+# # Send a ping to confirm a successful connection
+# try:
+#     client.admin.command('ping')
+#     print("Pinged your deployment. You successfully connected to MongoDB!")
+# except Exception as e:
+#     print(e)
+
+
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
+
+uri = "mongodb+srv://jamesjock0113_db_user:Atharv123@cluster0.okxjcfy.mongodb.net/?appName=Cluster0"
 
 # Create a new client and connect to the server
-client = MongoClient(MONGO_DB_URL)
+client = MongoClient(uri, server_api=ServerApi('1'))
 
 # Send a ping to confirm a successful connection
 try:
@@ -16,4 +32,3 @@ try:
     print("Pinged your deployment. You successfully connected to MongoDB!")
 except Exception as e:
     print(e)
-
