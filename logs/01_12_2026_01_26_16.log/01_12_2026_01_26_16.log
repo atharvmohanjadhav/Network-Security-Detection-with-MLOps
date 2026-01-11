@@ -1,0 +1,39 @@
+[2026-01-12 01:26:21,092] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-01-12 01:26:21,100] 107 dagshub - INFO - Accessing as atharvmohanjadhav
+[2026-01-12 01:26:22,320] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/atharvmohanjadhav/Network-Security "HTTP/1.1 200 OK"
+[2026-01-12 01:26:23,855] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-01-12 01:26:23,860] 107 dagshub - INFO - Initialized MLflow to track repo "atharvmohanjadhav/Network-Security"
+[2026-01-12 01:26:23,862] 107 dagshub - INFO - Repository atharvmohanjadhav/Network-Security initialized!
+[2026-01-12 01:26:39,445] 36 root - INFO - Data Ingestion Started!
+[2026-01-12 01:26:43,629] 54 root - INFO - Performing train-test split | Train Shape: (8844, 31) | Test Shape: (2211, 31)
+[2026-01-12 01:26:43,630] 62 root - INFO - Saving train.csv to Artifacts\01_12_2026_01_26_16\data_ingestion\ingested\train.csv
+[2026-01-12 01:26:43,744] 65 root - INFO - Saving test.csv to Artifacts\01_12_2026_01_26_16\data_ingestion\ingested\test.csv
+[2026-01-12 01:26:43,774] 68 root - INFO - Successfully exported train and test datasets.
+[2026-01-12 01:26:43,775] 39 root - INFO - Data Ingestion Completed!
+
+[2026-01-12 01:26:43,776] 47 root - INFO - Data Validation Started!
+[2026-01-12 01:26:43,977] 33 root - INFO - Required no of columns; 2
+[2026-01-12 01:26:43,977] 34 root - INFO - Data Frama has a columns: 31
+[2026-01-12 01:26:43,977] 33 root - INFO - Required no of columns; 2
+[2026-01-12 01:26:43,978] 34 root - INFO - Data Frama has a columns: 31
+[2026-01-12 01:26:44,320] 50 root - INFO - Data Validation Completed!
+
+[2026-01-12 01:26:44,320] 58 root - INFO - Data Transformation Started!
+[2026-01-12 01:26:44,320] 41 root - INFO - Enter initiate_data_transformation method of DataTransformation class
+[2026-01-12 01:26:44,320] 43 root - INFO - Started Data Transformation
+[2026-01-12 01:26:44,409] 23 root - INFO - Entered get__data_transformer_object method in DataTransformation class
+[2026-01-12 01:26:44,410] 26 root - INFO - Initialize KNNImputer!
+[2026-01-12 01:26:44,441] 42 root - INFO - Entered the save object method of Utils Class
+[2026-01-12 01:26:44,447] 46 root - INFO - Exited the save object method of Main Utils class!
+[2026-01-12 01:26:44,448] 42 root - INFO - Entered the save object method of Utils Class
+[2026-01-12 01:26:44,452] 46 root - INFO - Exited the save object method of Main Utils class!
+[2026-01-12 01:26:44,454] 61 root - INFO - Data Transformation completed!
+
+[2026-01-12 01:26:44,454] 68 root - INFO - Model Training started!
+[2026-01-12 01:32:11,647] 42 root - INFO - Entered the save object method of Utils Class
+[2026-01-12 01:32:11,795] 46 root - INFO - Exited the save object method of Main Utils class!
+[2026-01-12 01:32:11,796] 42 root - INFO - Entered the save object method of Utils Class
+[2026-01-12 01:32:11,946] 46 root - INFO - Exited the save object method of Main Utils class!
+[2026-01-12 01:32:11,946] 107 root - INFO - Model training Artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts\\01_12_2026_01_26_16\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricsArtifact(f1_score=0.9913061059441973, precision_score=0.990304988891133, recall_score=0.9923092491398502), test_metric_atifact=ClassificationMetricsArtifact(f1_score=0.9688779688779688, precision_score=0.9649265905383361, recall_score=0.9728618421052632))
+[2026-01-12 01:32:11,960] 72 root - INFO - Model Training completed!
+
